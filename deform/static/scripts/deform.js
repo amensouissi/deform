@@ -105,7 +105,7 @@ var deform  = {
        var e = jQuery.Event("change");
        var item_added = jQuery.Event("item_added");
        item_added.element = $htmlnode;
-       var form = $($htmlnode.parents('form.deform').first());
+       var form = $($htmlnode.parents('form').first());
        form.trigger(e);
        form.trigger(item_added);
     },
@@ -129,7 +129,7 @@ var deform  = {
 
     removeSequenceItem: function(clicked) {
         var $item_node = $(clicked).closest('.deform-seq-item');
-        var form = $($item_node.parents('form.deform').first());
+        var form = $($item_node.parents('form').first());
         var sequence = $($item_node.parents('.deform-seq-container').first());
         var $oid_node = $item_node.closest('.deform-seq');
         var $before_node = $oid_node.find('.deform-insert-before').last();
